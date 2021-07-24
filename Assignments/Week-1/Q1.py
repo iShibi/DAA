@@ -16,11 +16,11 @@ Input:
 '''
 
 
-def linear_search(arr, arr_length, key_element):
+def linear_search(arr, arr_length, key):
     comparisons = 0
     for i in range(arr_length):
         comparisons += 1
-        if (key_element == arr[i]):
+        if (key == arr[i]):
             return [True, comparisons]
     return [False, comparisons]
 
@@ -30,8 +30,8 @@ def main():
     for _ in range(test_cases):
         arr_length = int(input())
         arr = list(map(int, input().split(' ')))
-        key_element = int(input())
-        key_found, comparisons = linear_search(arr, arr_length, key_element)
+        key = int(input())
+        key_found, comparisons = linear_search(arr, arr_length, key)
         if (key_found):
             print(f"Present {comparisons}")
         else:
